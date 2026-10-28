@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naseer Ahmed | Newspaper Agent</title>
+<style>
+  /* Premium Design System */
+  :root {
+    --primary: #0a2a43;
+    --accent: #d4af37; /* Gold accent for premium feel */
+    --text-dark: #1a1a1a;
+    --text-light: #555;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --font-main: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+  }
+
+  /* Header */
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 80px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: var(--bg-light);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  }
+
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Navigation */
+  nav {
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  nav ul li a:hover {
+    color: var(--accent);
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Hero Image */
+  .hero-section {
+    margin-top: -60px;
+    margin-bottom: 60px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  /* Sections */
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin-top: 10px;
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+  }
+
+  /* Service Cards */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  }
+
+  .service-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  /* Newspaper List */
+  .paper-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .paper-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+    border: 1px solid #eee;
+    font-size: 1rem;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+  }
+
+  .gallery-grid img:hover {
+    opacity: 0.8;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .contact-section h2 {
+    color: var(--white);
+  }
+
+  .contact-section h2::after {
+    margin: 10px auto;
+    background: var(--accent);
+  }
+
+  .contact-info {
+    margin: 30px 0;
+  }
+
+  .contact-info p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .whatsapp-btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .whatsapp-btn-large:hover {
+    background: #1ebe5d;
+    transform: scale(1.02);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+  }
+
+  /* Floating WhatsApp Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .hero-img { height: 250px; }
+    .contact-section { padding: 40px 20px; }
+    nav ul li a { padding: 14px 15px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Naseer Ahmed</h1>
+  <p>Newspaper Agent — Your Trusted Source for Daily News & Magazines</p>
+  <span class="badge">Reliable Home Delivery</span>
+</header>
+
+<!-- Navigation -->
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#newspapers">Newspapers</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- Hero Image (Unsplash Free Image) -->
+  <section class="hero-section">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1100&auto=format&fit=crop" alt="Stack of newspapers">
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p class="section-subtitle">
+      Naseer Ahmed Newspaper Agent is a trusted and reliable newspaper delivery service committed to bringing you the latest news, magazines, and publications right to your doorstep. We pride ourselves on punctuality, accuracy, and customer satisfaction.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="section-subtitle">What we offer to keep you informed every day.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="icon">📰</span>
+        <h3>Daily Newspapers</h3>
+        <p>Fresh morning newspapers delivered to your home before you start your day.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">📚</span>
+        <h3>Magazines & Journals</h3>
+        <p>Weekly and monthly magazines for every interest, from fashion to business.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">🚚</span>
+        <h3>Home Delivery</h3>
+        <p>Reliable doorstep delivery with a focus on timeliness and care.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">📅</span>
+        <h3>Monthly Subscriptions</h3>
+        <p>Affordable monthly packages tailored to your reading habits.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newspapers Available -->
+  <section id="newspapers">
+    <h2>Available Newspapers</h2>
+    <p class="section-subtitle">We deliver all major national and regional newspapers.</p>
+    <div class="paper-list">
+      <div class="paper-item">Daily Jang</div>
+      <div class="paper-item">Express News</div>
+      <div class="paper-item">Dawn News</div>
+      <div class="paper-item">Nawa-i-Waqt</div>
+      <div class="paper-item">The News</div>
+      <div class="paper-item">Mashriq</div>
+      <div class="paper-item">Business Recorder</div>
+      <div class="paper-item">The Nation</div>
+    </div>
+  </section>
+
+  <!-- Gallery (Unsplash Free Images) -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p class="section-subtitle">A glimpse into our daily operations and the papers we deliver.</p>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?q=80&w=400&auto=format&fit=crop" alt="Newspaper delivery">
+      <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?q=80&w=400&auto=format&fit=crop" alt="Reading newspaper">
+      <img src="https://images.unsplash.com/photo-1504465039710-0f49c0a47eb7?q=80&w=400&auto=format&fit=crop" alt="Stack of papers">
+      <img src="https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?q=80&w=400&auto=format&fit=crop" alt="Magazines">
+    </div>
+  </section>
+
+  <!-- Contact / WhatsApp -->
+  <section id="contact" class="contact-section">
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+      <p>📞 Phone / WhatsApp: <a href="tel:+923191380401">0319 1380401</a></p>
+      <p>📍 Serving your area with dedication</p>
+    </div>
+    <!-- WhatsApp Link with Country Code 92 -->
+    <a class="whatsapp-btn-large" href="https://wa.me/923191380401?text=Hello%20Naseer%20Ahmed%2C%20I%20would%20like%20to%20inquire%20about%20newspaper%20delivery." target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 Naseer Ahmed Newspaper Agent. All Rights Reserved.
+</footer>
+
+<!-- Floating WhatsApp Button (Always Visible) -->
+<a class="whatsapp-float" href="https://wa.me/923191380401?text=Hello%20Naseer%20Ahmed%2C%20I%20would%20like%20to%20inquire%20about%20newspaper%20delivery." target="_blank" aria-label="Chat on WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
