@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions | Naseer Ahmed Newspaper Agent</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
+  h1 { color: #0a2a43; border-bottom: 3px solid #d4af37; padding-bottom: 10px; }
+  h2 { color: #0a2a43; margin-top: 30px; }
+  a { color: #0a2a43; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Terms &amp; Conditions</h1>
+  <p><strong>Last Updated:</strong> 2026</p>
+  <p>By using our newspaper delivery service, you agree to the following terms.</p>
+
+  <h2>1. Services</h2>
+  <p>We provide daily newspaper and magazine home delivery services. Availability of specific publications may vary.</p>
+
+  <h2>2. Subscriptions & Payments</h2>
+  <p>Monthly subscription fees must be paid in advance. Prices may change with notice.</p>
+
+  <h2>3. Delivery</h2>
+  <p>We aim for early morning delivery. Delivery times may vary due to weather, holidays, or circumstances beyond our control.</p>
+
+  <h2>4. Cancellations</h2>
+  <p>You may cancel your subscription by contacting us via phone or WhatsApp. Cancellations take effect from the next billing cycle.</p>
+
+  <h2>5. Missed Deliveries</h2>
+  <p>If a delivery is missed, please notify us the same day. We will make reasonable efforts to resolve the issue.</p>
+
+  <h2>6. Liability</h2>
+  <p>We are not liable for delays caused by events outside our reasonable control.</p>
+
+  <h2>7. Contact</h2>
+  <p>📞 Phone / WhatsApp: <a href="tel:+923191380401">0319 1380401</a></p>
+
+  <p style="margin-top:40px;"><a href="index.html">← Back to Home</a></p>
+</body>
+</html>
